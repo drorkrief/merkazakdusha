@@ -10,17 +10,17 @@ class Login extends Component {
             password: this.state.password,
             email: this.state.email
           })
-          .then(function (response) {
+          .then( (response) => {
             console.log(response.status);
             // this.props.setUser(response)
             response.status?console.log(response.status,"ok"):console.log(response.status,"bad");
             
             
           })
-        //   .catch(function (error) {
-        //       alert("הסיסמה לא נכונה")
-        //     console.log(error);
-        //   });
+          .catch( (error) => {
+              alert("הסיסמה לא נכונה")
+            console.log(error);
+          });
         this.props.handleClose();
     };
 

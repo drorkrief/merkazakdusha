@@ -30,6 +30,9 @@ axios.post('/login', {
 .then( 
   (response) => {
     console.log(response.status);
+    console.log(response.data);
+    this.props.setSecretKey(response.data)
+    
     this.setState({ logedin: true })
   }
 )

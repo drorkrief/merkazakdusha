@@ -6,6 +6,11 @@ body {
   /* text-align: right; */
   padding-bottom: 35px;
 }
+.continueProcess{
+  margin-top: 30px;
+  border: gray 2px solid;
+  border-radius: 20px;
+}
 .jumbotron {
   background-color: inherit !important;
   /* border: 1px brown solid; */

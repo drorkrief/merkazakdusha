@@ -22,8 +22,10 @@ import AdminPanel from "./AdminPanel";
 class App extends Component {
   
   cat = "";
-  state = { data: "", zmanim: "", cartList: [] ,user:null};
-  
+  state = { data: "", zmanim: "", cartList: [] ,user:null, key:""};
+  setSecretKey = key => {
+    this.setState({ key: key });
+  }
   setUser= (userName) => {
     this.setState({ user: userName });
   }
@@ -109,7 +111,7 @@ reduceQuantity = item => {
     return (
       <BrowserRouter>
       <div className="cartbg"></div>
-      <HeaderNavBar setUser={this.setUser} categories={this.state.categories}/>
+      <HeaderNavBar setSecretKey={this.setSecretKey} setUser={this.setUser} categories={this.state.categories}/>
              <Switch>
           <Route
             exact
@@ -149,7 +151,7 @@ reduceQuantity = item => {
           <Route exact path="/Subscibe" component={Subscibe} />
           <Route exact path="/Schedule" component={Schedule} />
           <Route exact path="/Address" component={Address} />
-          <Route exact path="/AdminPanel" render={()=><AdminPanel category={this.state.categories}/>}/>
+          <Route exact path="/AdminPanel" render={()=><AdminPanel key1={this.state.key} category={this.state.categories}/>}/>
           <Route
             exact
             path="/Product"

@@ -35,11 +35,11 @@ class CategoryList extends Component {
         return (
             <div className="categorylist" style={{ display:"inline-block"}}>
                 {direct}
-                <Card style={{ width: '10rem' ,margin: "10px"}}  onClick={
+                <Card style={{height:'10rem', width: '10rem' ,margin: "10px"}}  onClick={
               () => {this.setState({ redirect: !this.state.redirect })
               }
             }>
-                {this.state.image? <Card.Img height='150rem'  variant="top" src={this.state.image} />:<div className="spinner-border" role="status">
+                {this.state.image? <Card.Img height='150rem'  variant="top" src={this.state.image} />:<div style={{margin:"auto"}} className="spinner-border" role="status">
   <span className="sr-only">Loading...</span>
 </div>}
   
