@@ -6,6 +6,8 @@ const url = `mongodb://localhost:27017/my_kdusha`;
 const ordersHandle = require("./ordersHandle");
 const nodemailer = require("nodemailer");
 let numOrder = 1;
+const utils2 = require('./production_utils')
+
 let userId;
 const jwtVerifier = require('express-jwt')
 
@@ -416,6 +418,10 @@ app.get("/products", (req, res) => {
 app.get("/pic", (req, res) => {
   res.send({ res: "result from server 123" });
 });
+
+utils2.handleProduction(express,app);
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
